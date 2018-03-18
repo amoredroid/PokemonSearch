@@ -5,11 +5,11 @@ import com.google.gson.annotations.SerializedName
 /**
  * Created by Genson on 17/03/2018.
  */
-data class Pokemon (val sprites: Sprite,
-                    val type: String,
-                    val height: Float,
-                    val mana: Long,
-                    val count: Long)
+data class Pokemon (val sprite: Sprite,
+                    val id: Int,
+                    val name: String,
+                    val type: String
+                    )
 
 data class Sprite(@SerializedName("front_default")
                   val frontDefault: String
