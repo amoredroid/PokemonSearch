@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PokemonSearch</string>
+    <string name="atring_pokeNMae">Enter Pokemon Name...</string>
+</resources>
