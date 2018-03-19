@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ccffff"
     tools:context="com.genson.amor.pokemonsearch.MainActivity">
 
 
@@ -47,6 +48,7 @@
 
 
         <RelativeLayout
+            android:visibility="invisible"
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -88,7 +90,6 @@
                     tools:layout_editor_absoluteX="8dp" />
 
 
-
             </ScrollView>
 
             <LinearLayout
@@ -107,8 +108,10 @@
 
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/txt_id"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:visibility="visible">
 
 
                 <ImageView
@@ -117,112 +120,363 @@
                     android:layout_height="150dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.561"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@color/colorPrimaryDark" />
 
                 <TextView
                     android:id="@+id/tV_id"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
+
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="16dp"
                     android:text="id"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imgView_pokemon" />
 
                 <TextView
                     android:id="@+id/tV_pokeName"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
+
+                    android:layout_width="234dp"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentTop="true"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
                     android:text="name"
                     android:textSize="24sp"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/tV_id"
                     app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/imgView_pokemon"
-                    app:layout_constraintTop_toBottomOf="@+id/tV_id" />
+                    app:layout_constraintStart_toEndOf="@+id/textView3"
+                    app:layout_constraintTop_toBottomOf="@+id/tV_id"
+                    tools:ignore="MissingConstraints" />
 
 
                 <TextView
                     android:id="@+id/tV_pokeType"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_width="234dp"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_below="@+id/tV_pokeName"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
                     android:text="type"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
+                    android:visibility="invisible"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/imgView_pokemon"
+                    app:layout_constraintStart_toStartOf="@+id/tV_pokeName"
                     app:layout_constraintTop_toBottomOf="@+id/tV_pokeName" />
 
                 <TextView
                     android:id="@+id/tV_pokeAbilities"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
+
+                    android:layout_width="234dp"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_below="@+id/tV_pokeType"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
                     android:text="abilities"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/imgView_pokemon"
+                    app:layout_constraintStart_toStartOf="@+id/tV_pokeType"
                     app:layout_constraintTop_toBottomOf="@+id/tV_pokeType" />
 
                 <TextView
                     android:id="@+id/tV_height"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
+
+                    android:layout_width="234dp"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_below="@+id/tV_pokeAbilities"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
                     android:text="height"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/imgView_pokemon"
-                    app:layout_constraintTop_toBottomOf="@+id/tV_pokeAbilities" />
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/tV_pokeAbilities"
+                    app:layout_constraintTop_toBottomOf="@+id/tV_pokeAbilities"
+                    android:layout_marginRight="0dp" />
 
                 <TextView
                     android:id="@+id/tV_weight"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
+
+                    android:layout_width="237dp"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_below="@+id/tV_height"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
                     android:text="weight"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/tV_height"
+                    app:layout_constraintTop_toBottomOf="@+id/tV_height" />
+
+                <TextView
+                    android:id="@+id/tV_move1"
+
+                    android:layout_width="234dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/tV_weight"
+                    android:text="move1"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+                <TextView
+                    android:id="@+id/tV_move2"
+                    android:layout_width="234dp"
+                    android:layout_height="31dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/tV_move1"
+                    android:layout_marginEnd="60dp"
+                    android:text="move2"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tV_move1"
+                    app:layout_constraintTop_toBottomOf="@+id/tV_move1"
+                    android:layout_marginRight="0dp" />
+
+
+                <TextView
+                    android:id="@+id/base_stat_header"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_below="@+id/tV_move2"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    android:text="BASE STAT"
+                    android:textSize="28sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tV_move2"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginLeft="0dp" />
+
+                <TextView
+                    android:id="@+id/baseStat_HP"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/base_stat_header"
+                    android:layout_marginEnd="8dp"
+                    android:text="HP"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/base_stat_header"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/baseStat_Attack"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/baseStat_HP"
+                    android:layout_marginEnd="8dp"
+                    android:text="ATTACK"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/baseStat_HP"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/baseStat_Defense"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/baseStat_Attack"
+                    android:layout_marginEnd="8dp"
+                    android:text="DEFENSE"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/baseStat_Attack"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/baseStat_SpecialAttack"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/baseStat_Defense"
+                    android:layout_marginEnd="8dp"
+                    android:text="SPECIAL ATTACK"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/baseStat_Defense"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/baseStat_SpecialDefense"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/baseStat_SpecialAttack"
+                    android:layout_marginEnd="8dp"
+                    android:text="SPECIAL DEFENSE"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/baseStat_SpecialAttack"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/baseStat_Speed"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/baseStat_SpecialDefense"
+                    android:layout_marginEnd="8dp"
+                    android:text="SPEED"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/baseStat_SpecialDefense"
+                    android:layout_marginRight="0dp" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="   ID: "
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toStartOf="@+id/tV_id"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgView_pokemon"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:text="   Name:"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="@+id/textView2"
+                    app:layout_constraintStart_toStartOf="@+id/textView2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:text="   Type:"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="@+id/textView3"
+                    app:layout_constraintHorizontal_bias="0.894"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:text="   Abilities:"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="@+id/textView4"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/textView4"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:text="   Height:"
+                    android:textSize="22sp"
+                    app:layout_constraintTop_toBottomOf="@+id/textView5"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="0dp" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="140dp"
+                    android:layout_height="0dp"
+                    android:text="   Weight:"
+                    android:textSize="22sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:text="HP:"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/base_stat_header"
+                    android:layout_marginLeft="0dp" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="MOVES"
                     android:textSize="24sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/imgView_pokemon"
-                    app:layout_constraintTop_toBottomOf="@+id/tV_height" />
+                    app:layout_constraintHorizontal_bias="0.166"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView7"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginLeft="0dp" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:text="Attack:"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView8"
+                    android:layout_marginLeft="0dp" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:text="Defense:"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10"
+                    android:layout_marginLeft="0dp" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:text="Special Attack:"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:text="Special Defense:"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView12" />
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:text="Speed:"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
 
             </android.support.constraint.ConstraintLayout>
 

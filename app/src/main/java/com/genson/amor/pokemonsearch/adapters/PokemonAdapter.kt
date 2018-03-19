@@ -26,9 +26,18 @@ class PokemonAdapter(private val pokemon: ArrayList<Pokemon>) : RecyclerView.Ada
 
         holder?.itemView?.tV_height?.text = pokemon[position].height
         holder?.itemView?.tV_weight?.text = pokemon[position].weight
+        holder?.itemView?.baseStat_HP?.text = pokemon[position].hp.stats
+        holder?.itemView?.baseStat_Attack?.text = pokemon[position].attack.stats
+        holder?.itemView?.baseStat_Defense?.text = pokemon[position].defence.stats
+        holder?.itemView?.baseStat_SpecialAttack?.text = pokemon[position].spAttack.stats
+        holder?.itemView?.baseStat_SpecialDefense?.text = pokemon[position].spDefence.stats
+        holder?.itemView?.baseStat_Speed?.text = pokemon[position].speed.stats
 
-        holder?.itemView?.tV_pokeType?.text = pokemon[position].type.substring(0,1).toUpperCase() + pokemon[position].type.substring(1)
+        holder?.itemView?.tV_pokeType?.text = pokemon[position].type.substring(0, 1).toUpperCase() + pokemon[position].type.substring(1)
         holder?.itemView?.tV_pokeAbilities?.text = pokemon[position].abilities.substring(0, 1).toUpperCase() + pokemon[position].abilities.substring(1)
+
+        holder?.view?.tV_move1?.text = pokemon[position].moves1.pokemonMove.substring(0, 1).toUpperCase() + pokemon[position].moves1.pokemonMove.substring(1)
+        holder?.view?.tV_move2?.text = pokemon[position].moves2.pokemonMove.substring(0, 1).toUpperCase() + pokemon[position].moves2.pokemonMove.substring(1)
 
     }
 
@@ -39,18 +48,14 @@ class PokemonAdapter(private val pokemon: ArrayList<Pokemon>) : RecyclerView.Ada
     }
 
 
-//    class CustomViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-////        val imgPokemon = view.findViewById<ImageView>(R.id.imgView_pokemon)
-////        val pokeName = view.findViewById<TextView>(R.id.tV_pokeName)
-////        val pokeType = view.findViewById<TextView>(R.id.tV_pokeType)
-//
-//    }
-
     class CustomViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
 
-
     }
+
+
 }
+
+
 
 
 
